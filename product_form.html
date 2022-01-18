@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="product_form.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<title>Product</title>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="card">
+				<form action="products.html" class="product_form">
+					<label for="product_name">PRODUCT NAME</label>
+					<br>
+					<input type="text" name="product_name" class="text-field">
+                    <br>
+					<label for="product_unit">UNIT OF MEASUREMENT</label>
+					<br>
+					<input type="text" name="product_unit" class="text-field">
+					<br>
+					<label for="product_price">PRICE</label>
+					<br>
+					<input type="number" step="any" name="product_price" class="text-field">
+					<br>
+					<label>PRODUCT IMAGE</label>
+					<br>
+					<div class="file-upload-card">
+						<label for="product_image" id="upload-img-button">
+							<div>Upload File</div>
+							<input type="file" name="product_image" id="product_image" accept="image/*">
+						</label>
+					</div>
+					<br>
+					<label for="product_description">PRODUCT DESCRIPTION</label>
+					<br>
+					<textarea name="product_description"></textarea>
+					<br>
+					<div class="form-footer">
+						<input type="submit" value="Save">
+						<input type="reset" value="Reset" id="reset-btn">
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

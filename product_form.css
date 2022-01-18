@@ -1,0 +1,167 @@
+body{
+	height: 100vh;
+	width: 100%;
+	font-size: 12px;
+}
+#wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#card{
+	background-color: #ecf1f7;
+	max-width: 450px;
+	width: 100%;
+	padding: 20px;
+	height: 100%;
+}
+.text-field{
+	width: 100%;
+	max-width: 400px;
+	height: 30px;
+	margin-bottom: 20px;
+	border: none;
+	border-radius: 2px;
+}
+label{
+  font-weight: normal;
+}
+textarea{
+	height: 150px;
+	width: 100%;
+	max-width: 400px;
+	border-radius: 2px;
+}
+.file-upload-card{
+	max-width: 400px;
+	height: 150px;
+	border: 1px dashed;
+	display: flex;
+}
+#upload-img-button{
+	width: 180px;
+	height: 35px;
+	background: white;
+	display: block;
+	margin: auto;
+	border: 2px solid #0c8bcf;
+	border-radius: 40px;
+	color: #0c8bcf;
+	text-align: center;
+	line-height: 30px;
+}
+#product_image{
+  display: none;
+}
+.form-footer{
+  margin-top: 25px;
+	display: flex;
+  justify-content: center;
+}
+.form-footer input{
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	background: #0c8bcf;
+	text-align: center;
+	color: #fff;
+	border-radius: 15px;
+	border: none;
+}
+.form-footer #reset-btn{
+  margin-left: 20px;
+}
+
+/* list view */
+#products-wrapper{
+	margin: 10px 20px;
+}
+nav{
+	height: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	padding: 0px 10px;
+}
+#myList img{
+	width: 50px;
+	height: 50px;
+}
+.short {
+	max-width: 250px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.product-title{
+	color: #0c8bcf;
+}
+.add-product-btn, .add-product-btn:hover{
+	text-decoration: none;
+	background: #f89a07;
+	height: 25px;
+	width: 100px;
+	color: #fff;
+	border-radius: 15px;
+	padding: 3px;
+	text-align: center;
+	cursor: pointer;
+}
+.product-table-parent{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	overflow: auto;
+}
+table {
+	overflow-x: scroll;
+	white-space: nowrap;
+	align-self: center;
+	width: 100%;
+}
+td, th{
+	padding: 0px 25px;
+	text-align: center;
+	font-weight: normal;
+	border-bottom: 1px solid grey;
+}
+.align-left{
+	text-align: left;
+	padding-left: 0px;
+}
+.align-right{
+	text-align: right;
+}
+#myList td a{
+	text-decoration: none;
+	display: inline-block;
+	width: 50px;
+	height: 20px;
+	color: #0c8bcf;
+	text-align: center;
+	background-color: #fff;
+	border-radius: 15px;
+	border: 1px solid grey;
+	margin: 0px 10px;
+	cursor: pointer;
+}
+.d-none{
+	display: none;
+}
+.page-buttons span{
+	padding: 0px 2px;
+	height: 15px;
+	width: 20px;
+}
+.forward-btn{
+	border-left: 0.5px solid grey;
+	width: 25px !important;
+}
+.page-buttons{
+	margin-left: 20px;
+	border: 0.5px solid grey;
+	border-radius: 10px;
+	cursor: pointer;
+}

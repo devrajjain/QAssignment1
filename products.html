@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="product_form.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script id="allProducts" src="products.js"></script>
+		<script>
+			var total = product_list.length;
+			var currentPage = 0;
+			$(document).ready(function(){
+				for(var i=0; i < total; i++){
+					$("#myList").append('<tr class="trow" data-index="'+ (i+1) +'"><td><img src="'+ product_list[i].image +'"></td><td class="short product-title align-left">'+ product_list[i].title +'</td><td class="short">'+ product_list[i].description +'</td><td>'+ product_list[i].price +'</td><td class="align-right">NA</td><td><a href="product_form.html">Edit</a><a class="remove-product">Delete</a></td></tr>');
+				}
+				$(".remove-product").click(function(event) {
+					event.preventDefault();
+					$(this).closest('.trow').remove();
+				});
+				paginateforward();
+			});
+			function paginateforward(){
+				if((currentPage+1)*10 <= total){
+					currentPage++;
+					paginateProducts();
+				}
+			}
+			function paginatebackward(){
+				if(currentPage > 1){
+					currentPage--;
+					paginateProducts();
+				}
+			}
+			function paginateProducts(){
+				$(".page-detail").html(((currentPage-1)*10)+1 + '-' + (product_list.length >= (currentPage*10) ? (currentPage*10) : total) + ' of ' + total);
+				$('.trow').addClass('d-none');
+				$('.trow').each(function(){
+					if($(this).data('index') > ((currentPage-1)*10) && $(this).data('index') <= (currentPage*10)){
+						$(this).removeClass('d-none');
+					}
+				});
+			}
+		</script>
+		<title>Products</title>
+	</head>
+	<body>
+		<div id="products-wrapper">
+			<nav>
+				<div class="view-product-header"><h4>View Products</h4></div>
+				<a class="add-product-btn" href="product_form.html">Add a product</a>
+			</nav>
+			<div class="product-table-parent">
+				<table id="myList">
+					<tr>
+						<th>Image</th>
+						<th class="align-left">Product Name</th>
+						<th>Description</th>
+						<th>Price</th>
+						<th class="align-right">Unit of<br>Measurement</th>
+						<th class="pages">
+							<span class="page-detail"></span>
+							<span class="page-buttons">
+								<span class="backward-btn" onclick="paginatebackward()"><</span>
+								<span class="forward-btn" onclick="paginateforward()">></span>
+							</span>
+						</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
